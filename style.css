@@ -317,13 +317,6 @@ body {
   text-align: center;
 }
 
-.logo-tagline {
-  display: block;
-  margin-top: 4px;          /* or whatever spacing you like */
-  font-size: 1rem;        /* adjust tagline font size */
-  color: var(--gray-web);   /* or some other color/style */
-}
-
 
 .logo-img {
   width: 150px;
