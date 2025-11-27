@@ -76,6 +76,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* optional: ensure all sections don’t inadvertently overflow */
+.wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 li {
   list-style: none;
@@ -302,8 +312,18 @@ body {
 /* logo – only the image */
 .logo {
   display: flex;
-  align-items: center;
+  flex-direction: column;   /* stack image and tagline vertically */
+  align-items: center;      /* center horizontally */
+  text-align: center;
 }
+
+.logo-tagline {
+  display: block;
+  margin-top: 4px;          /* or whatever spacing you like */
+  font-size: 1rem;        /* adjust tagline font size */
+  color: var(--gray-web);   /* or some other color/style */
+}
+
 
 .logo-img {
   width: 150px;
