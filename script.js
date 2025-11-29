@@ -59,6 +59,31 @@ window.addEventListener('scroll', function () {
   }
 });
 
+//whatsapp form
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // stop normal form submit
+
+  const name = document.querySelector('input[name="name"]').value.trim();
+  const email = document.querySelector('input[name="email_address"]').value.trim();
+  const company = document.querySelector('input[name="company"]').value.trim();
+  const website = document.querySelector('input[name="website"]').value.trim();
+  const message = document.querySelector('textarea[name="message"]').value.trim();
+
+  const phoneNumber = "919994490338"; // 👈 your WhatsApp number here
+
+  let text = `New enquiry from InspireMinds website%0A%0A`;
+  text += `Name: ${name}%0A`;
+  text += `Email: ${email}%0A`;
+  if (company) text += `Company / Brand: ${company}%0A`;
+  if (website) text += `Website: ${website}%0A`;
+  text += `%0AGoals for next 3–6 months:%0A${message}`;
+
+  const url = `https://wa.me/${phoneNumber}?text=${text}`;
+
+  window.open(url, "_blank"); // open WhatsApp Web / App
+});
+
 /**
  * Init AOS (scroll animations)
  */

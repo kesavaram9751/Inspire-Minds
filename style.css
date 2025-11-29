@@ -577,15 +577,47 @@ body {
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
-
 .service {
   background-color: transparent;
 }
 
 .service .section-text {
-  margin-block: 5px 35px;
+  margin-block: 5px 30px;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
+/* small subtitle headings */
+.service-subtitle {
+  margin-block: 20px 16px;
+  text-align: left;
+}
+
+/* wrapper below for DM section spacing */
+.dm-wrapper {
+  margin-top: 40px;
+}
+
+.dm-text {
+  margin-block: 4px 24px;
+}
+
+/* GENERIC GRID – MOBILE FIRST */
+.grid-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 20px;
+}
+
+/* main categories & DM services have their own tweaks if needed */
+.service-grid,
+.dm-service-grid {
+  grid-template-columns: 1fr;
+}
+
+/* CARD STYLE */
 .service-card {
   background-color: var(--white-1);
   padding: 22px 18px;
@@ -595,7 +627,7 @@ body {
   border: 1px solid rgba(0, 31, 63, 0.04);
   position: relative;
   overflow: hidden;
-  transition: var(--transition-2);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .service-card::before {
@@ -606,7 +638,8 @@ body {
   height: 90px;
   background: var(--gradient-soft);
   opacity: 0;
-  transition: var(--transition-2);
+  transition: opacity 220ms ease, transform 220ms ease;
+  transform: translateY(10px);
 }
 
 .service-card:is(:hover, :focus-within) {
@@ -616,6 +649,7 @@ body {
 
 .service-card:is(:hover, :focus-within)::before {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .service-card .card-icon {
@@ -632,11 +666,45 @@ body {
 
 .service-card .card-title {
   margin-block: 6px 10px;
+  display: inline-block;
 }
 
 .service-card .card-text {
   font-size: var(--fs-6);
+  line-height: 1.6;
 }
+
+/* ============= RESPONSIVE BREAKPOINTS ============= */
+
+@media (min-width: 768px) {
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dm-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .service .section-title,
+  .service .section-text {
+    text-align: center;
+  }
+
+  .service-subtitle {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-card {
+    padding: 26px 24px;
+  }
+
+  .grid-list {
+    gap: 26px;
+  }
+}
+
 
 /*-----------------------------------*\
   #PROCESS
@@ -692,6 +760,9 @@ body {
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
 
 .about {
   background-color: transparent;
@@ -700,6 +771,7 @@ body {
 .about-grid {
   display: grid;
   gap: 30px;
+  align-items: center;
 }
 
 .about-banner {
@@ -708,30 +780,57 @@ body {
   overflow: hidden;
   box-shadow: var(--shadow-1);
 }
+
 .about-banner video {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* crops video properly */
-  object-position: center; /* keeps center always visible */
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-.about :is(.section-title, .section-text) {
-  text-align: left;
+/* new card for text content */
+.about-container {
+  background-color: var(--white-1);
+  padding: 24px 22px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(0, 31, 63, 0.04);
 }
 
+/* heading "About Us" */
 .about .section-title {
-  margin-block-end: 8px;
+  text-align: left;
+  margin-block-end: 10px;
 }
 
-.about .section-text:not(:last-child) {
-  margin-block-end: 18px;
+/* tagline style */
+.about-tagline {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  color: var(--primary-700);
+  border-left: 4px solid var(--primary-500);
+  padding-left: 14px;
 }
 
-.about .h3 {
-  margin-block-end: 8px;
+/* paragraphs */
+.about-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: var(--gray-web);
 }
 
+/* remove extra bottom margin on last paragraph */
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+/* list styles if you add bullets later */
 .about-list {
   margin-block: 15px 18px;
 }
@@ -751,6 +850,30 @@ body {
 .about-item:not(:last-child) {
   margin-block-end: 10px;
 }
+
+/* responsive tweaks */
+@media (min-width: 768px) {
+  .about-banner {
+    max-width: 550px;
+  }
+
+  .about .section-text {
+    max-width: unset;
+    margin-inline: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 50px;
+  }
+
+  .about-container {
+    padding: 28px 26px;
+  }
+}
+
 
 /*-----------------------------------*\
   #CTA
@@ -794,51 +917,7 @@ body {
   margin-inline: auto;
 }
 
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
 
-.blog .section-text {
-  margin-block: 5px 35px;
-}
-
-.blog-card {
-  background-color: var(--white-1);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow-1);
-}
-
-.blog-card .card-banner {
-  overflow: hidden;
-}
-
-.blog-card .card-banner img {
-  transition: var(--transition-2);
-}
-
-.blog-card:is(:hover, :focus-within) .card-banner img {
-  transform: scale(1.05);
-}
-
-.blog-card .card-content {
-  padding: 18px;
-}
-
-.blog-card .time {
-  color: var(--primary-600);
-  font-size: var(--fs-6);
-  line-height: 1;
-  margin-block-end: 10px;
-}
-
-.blog-card .card-title {
-  transition: var(--transition-1);
-}
-
-.blog-card .card-title:is(:hover, :focus) {
-  color: var(--primary-700);
-}
 
 /*-----------------------------------*\
   #CONTACT
