@@ -76,7 +76,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
   overflow-x: hidden;
   width: 100%;
 }
@@ -268,25 +270,26 @@ body {
   object-fit: cover;
 }
 
-/*-----------------------------------*\
-  #HEADER  (light floating navbar)
-\*-----------------------------------*/
 /* ---------- HEADER (floating, centered pill) ---------- */
 
 .header {
   position: fixed;
   top: 18px;
   left: 0;
-  width: 100%;                 /* full viewport, no transform */
-  padding-inline: 16px;        /* space from screen edges */
+  width: 100%;
+  /* full viewport, no transform */
+  padding-inline: 16px;
+  /* space from screen edges */
   box-sizing: border-box;
   z-index: 40;
   transition: var(--transition-2);
 }
 
 .header-inner {
-  max-width: 1140px;           /* same as big container */
-  margin-inline: auto;         /* centers the pill */
+  max-width: 1140px;
+  /* same as big container */
+  margin-inline: auto;
+  /* centers the pill */
   width: 100%;
   padding: 10px 18px;
   display: flex;
@@ -312,8 +315,10 @@ body {
 /* logo – only the image */
 .logo {
   display: flex;
-  flex-direction: column;   /* stack image and tagline vertically */
-  align-items: center;      /* center horizontally */
+  flex-direction: column;
+  /* stack image and tagline vertically */
+  align-items: center;
+  /* center horizontally */
   text-align: center;
 }
 
@@ -331,10 +336,14 @@ body {
 }
 
 .nav-toggle-btn.active .open,
-.nav-toggle-btn .close { display: none; }
+.nav-toggle-btn .close {
+  display: none;
+}
 
 .nav-toggle-btn .open,
-.nav-toggle-btn.active .close { display: block; }
+.nav-toggle-btn.active .close {
+  display: block;
+}
 
 /* mobile dropdown nav */
 .navbar {
@@ -438,7 +447,6 @@ body {
   #HERO
 \*-----------------------------------*/
 
-/* white hero background */
 .hero {
   position: relative;
   padding-block-start: 140px;
@@ -448,7 +456,6 @@ body {
   overflow: hidden;
 }
 
-/* soft blue shapes */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -524,8 +531,6 @@ body {
   font-size: 1.3rem;
   color: var(--gray-web);
 }
-
-
 
 .hero-banner {
   max-width: 720px;
@@ -951,7 +956,9 @@ body {
   margin-block-end: 15px;
 }
 
-.input-field::-webkit-inner-spin-button { display: none; }
+.input-field::-webkit-inner-spin-button {
+  display: none;
+}
 
 .input-field:focus {
   outline-color: var(--primary-600);
@@ -1012,6 +1019,78 @@ textarea.input-field {
   gap: 15px;
   border: 1px solid rgba(0, 31, 63, 0.04);
 }
+
+/* WhatsApp card – brand styling */
+.contact-item.contact-whatsapp .card-icon {
+  background: radial-gradient(circle at 0 0,
+      rgba(37, 211, 102, 0.22),
+      transparent 70%);
+  color: #25D366;
+  /* WhatsApp green */
+}
+
+/* Hover effect – strong WhatsApp gradient */
+.contact-item.contact-whatsapp .contact-card:is(:hover, :focus-within) .card-icon {
+  background: radial-gradient(circle at 30% 0,
+      #25D366 0,
+      #128C7E 45%,
+      #075E54 100%);
+  color: #ffffff;
+}
+
+/* Optional: subtle green border for the WhatsApp card */
+.contact-item.contact-whatsapp .contact-card {
+  border-color: rgba(37, 211, 102, 0.35);
+}
+
+/* ---------- MAIL CARD (Red tone branding) ---------- */
+.contact-item.contact-mail .card-icon {
+  background: radial-gradient(circle at 0 0, rgba(233, 30, 99, 0.18), transparent 70%);
+  color: #E91E63;
+}
+
+.contact-item.contact-mail .contact-card:is(:hover, :focus-within) .card-icon {
+  background: radial-gradient(circle at 30% 0, #FF3366 0, #E91E63 60%, #B0003A 100%);
+  color: #fff;
+}
+
+.contact-item.contact-mail .contact-card {
+  border-color: rgba(233, 30, 99, 0.32);
+}
+
+
+/* ---------- CALL CARD (Orange gradient for attention) ---------- */
+.contact-item.contact-call .card-icon {
+  background: radial-gradient(circle at 0 0, rgba(255, 140, 0, 0.20), transparent 70%);
+  color: #FF8C00;
+}
+
+.contact-item.contact-call .contact-card:is(:hover, :focus-within) .card-icon {
+  background: radial-gradient(circle at 30% 0, #FFA500 0, #FF8C00 55%, #CC5500 100%);
+  color: #fff;
+}
+
+.contact-item.contact-call .contact-card {
+  border-color: rgba(255, 140, 0, 0.35);
+}
+
+
+/* ---------- VISIT CARD (Google Maps blue palette variation) ---------- */
+.contact-item.contact-visit .card-icon {
+  background: radial-gradient(circle at 0 0, rgba(66, 133, 244, 0.18), transparent 70%);
+  color: #4285F4;
+}
+
+.contact-item.contact-visit .contact-card:is(:hover, :focus-within) .card-icon {
+  background: radial-gradient(circle at 30% 0, #4285F4 0, #1A73E8 55%, #0049B7 100%);
+  color: #fff;
+}
+
+/* Keep card box as your theme but slight blue border hint */
+.contact-item.contact-visit .contact-card {
+  border-color: rgba(66, 133, 244, 0.26);
+}
+
 
 .contact-card .card-icon {
   background: var(--gradient-soft);
@@ -1077,6 +1156,54 @@ textarea.input-field {
   transition: var(--transition-1);
 }
 
+/* Brand-specific social styles */
+
+/* Base tweak: slightly softer neutral background for all */
+.social-link {
+  background-color: #ffffff;
+}
+
+/* Instagram */
+.social-link.social-instagram .social-icon {
+  background: radial-gradient(circle at 30% 0,
+      #fdf497 0,
+      #fd5949 35%,
+      #d6249f 65%,
+      #285AEB 100%);
+}
+
+.social-link.social-instagram .social-icon ion-icon {
+  color: #ffffff;
+}
+
+.social-link.social-instagram span:last-child {
+  color: #E4405F;
+  font-weight: 500;
+}
+
+/* LinkedIn */
+.social-link.social-linkedin .social-icon {
+  background: #0A66C2;
+}
+
+.social-link.social-linkedin .social-icon ion-icon {
+  color: #ffffff;
+}
+
+.social-link.social-linkedin span:last-child {
+  color: #0A66C2;
+  font-weight: 500;
+}
+
+/* Hover – consistent, clean elevation */
+.social-link.social-instagram:is(:hover, :focus),
+.social-link.social-linkedin:is(:hover, :focus) {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+
 .social-icon {
   width: 26px;
   height: 26px;
@@ -1100,22 +1227,39 @@ textarea.input-field {
 /* responsive tweaks already in your file */
 
 @media (min-width: 575px) {
-  .contact-item { min-width: calc(50% - 18px); }
+  .contact-item {
+    min-width: calc(50% - 18px);
+  }
 }
 
 @media (min-width: 768px) {
-  .contact-form { padding: 28px 26px; }
-  .contact-item { min-width: calc(50% - 12.5px); }
+  .contact-form {
+    padding: 28px 26px;
+  }
+
+  .contact-item {
+    min-width: calc(50% - 12.5px);
+  }
 }
 
 @media (min-width: 992px) {
-  .contact-form { padding: 36px 32px; }
-  .contact-item { min-width: calc(33.33% - 16.66px); }
-  .contact-card { padding: 22px 24px; }
+  .contact-form {
+    padding: 36px 32px;
+  }
+
+  .contact-item {
+    min-width: calc(33.33% - 16.66px);
+  }
+
+  .contact-card {
+    padding: 22px 24px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .contact-form { padding: 45px 40px; }
+  .contact-form {
+    padding: 45px 40px;
+  }
 }
 
 
@@ -1224,9 +1368,10 @@ textarea.input-field {
   }
 
   .hero-grid {
-    grid-template-columns: 1.2fr 1fr;  /* text left, video right */
+    grid-template-columns: 1.2fr 1fr;
+    /* text left, video right */
   }
-  
+
   .about-banner {
     max-width: 550px;
   }
@@ -1356,6 +1501,7 @@ textarea.input-field {
   .btn {
     --fs-6: 1.5rem;
   }
+
   .logo-img {
     width: 150px;
   }
@@ -1373,4 +1519,3 @@ textarea.input-field {
   }
 
 }
-
