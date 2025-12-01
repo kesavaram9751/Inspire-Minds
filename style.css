@@ -1123,7 +1123,6 @@ textarea.input-field {
 }
 
 /* social profiles below cards */
-
 .contact-social {
   margin-top: 34px;
   text-align: center;
@@ -1148,7 +1147,7 @@ textarea.input-field {
   gap: 8px;
   padding: 9px 16px;
   border-radius: var(--radius-pill);
-  background-color: var(--white-1);
+  background-color: #ffffff;
   box-shadow: var(--shadow-1);
   border: 1px solid rgba(0, 112, 243, 0.12);
   font-size: 1.4rem;
@@ -1156,27 +1155,19 @@ textarea.input-field {
   transition: var(--transition-1);
 }
 
-/* Brand-specific social styles */
-
-/* Base tweak: slightly softer neutral background for all */
-.social-link {
-  background-color: #ffffff;
-}
+/* ========= Brand Specific Styles ========= */
 
 /* Instagram */
 .social-link.social-instagram .social-icon {
   background: radial-gradient(circle at 30% 0,
-      #fdf497 0,
-      #fd5949 35%,
-      #d6249f 65%,
-      #285AEB 100%);
+      #fdf497 0, #fd5949 35%, #d6249f 65%, #285AEB 100%);
 }
 
 .social-link.social-instagram .social-icon ion-icon {
   color: #ffffff;
 }
 
-.social-link.social-instagram span:last-child {
+.social-link.social-instagram span {
   color: #E4405F;
   font-weight: 500;
 }
@@ -1190,25 +1181,38 @@ textarea.input-field {
   color: #ffffff;
 }
 
-.social-link.social-linkedin span:last-child {
+.social-link.social-linkedin span {
   color: #0A66C2;
   font-weight: 500;
 }
 
-/* Hover – consistent, clean elevation */
+/* YouTube */
+.social-link.social-youtube .social-icon {
+  background: #FF0000;
+}
+
+.social-link.social-youtube .social-icon ion-icon {
+  color: #ffffff;
+}
+
+.social-link.social-youtube span {
+  color: #FF0000;
+  font-weight: 500;
+}
+
+/* ========= Hover Effect (Clean Elevation) ========= */
 .social-link.social-instagram:is(:hover, :focus),
-.social-link.social-linkedin:is(:hover, :focus) {
+.social-link.social-linkedin:is(:hover, :focus),
+.social-link.social-youtube:is(:hover, :focus) {
   background: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
 }
 
-
 .social-icon {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: var(--gradient-soft);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1218,11 +1222,6 @@ textarea.input-field {
   font-size: 18px;
 }
 
-.social-link:is(:hover, :focus) {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 132, 255, 0.28);
-  background: linear-gradient(135deg, #ffffff, #f2f8ff);
-}
 
 /* responsive tweaks already in your file */
 
