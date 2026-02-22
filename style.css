@@ -711,151 +711,6 @@ body {
 }
 
 
-/*-----------------------------------*\
-  #SUCCESS
-\*-----------------------------------*/
-
-/*-----------------------------------*\
-  #SUCCESS
-\*-----------------------------------*/
-
-.success {
-  background: radial-gradient(circle at top right, hsla(202, 100%, 50%, 0.05), transparent 40%),
-    radial-gradient(circle at bottom left, hsla(187, 100%, 50%, 0.05), transparent 40%);
-  background-color: var(--cultured-2);
-  position: relative;
-  z-index: 1;
-}
-
-.success .section-text {
-  margin-block: 5px 45px;
-}
-
-.success-grid {
-  gap: 30px;
-}
-
-.success-card {
-  background-color: hsla(0, 0%, 100%, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 16px;
-  border-radius: 28px;
-  box-shadow: var(--shadow-1);
-  border: 1px solid hsla(0, 0%, 100%, 0.5);
-  transition: all 0.5s var(--cubic-out);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.success-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 0 0 var(--primary-500);
-  opacity: 0;
-  transition: var(--transition-2);
-  pointer-events: none;
-}
-
-.success-card:is(:hover, :focus-within) {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(6, 27, 61, 0.15);
-  background-color: var(--white-1);
-  border-color: var(--primary-500);
-}
-
-.success-card:is(:hover, :focus-within)::after {
-  box-shadow: 0 0 0 4px hsla(202, 100%, 50%, 0.1);
-  opacity: 1;
-}
-
-.success-card .card-banner {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 22px;
-  aspect-ratio: 1.5 / 1;
-  box-shadow: var(--shadow-1);
-}
-
-.success-card .img-cover {
-  transition: transform 0.8s var(--cubic-out);
-}
-
-.success-card:is(:hover, :focus-within) .img-cover {
-  transform: scale(1.15);
-}
-
-/* image overlay on hover */
-.success-card .card-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, hsla(202, 100%, 50%, 0.3), transparent);
-  opacity: 0;
-  transition: var(--transition-2);
-}
-
-.success-card:is(:hover, :focus-within) .card-banner::after {
-  opacity: 1;
-}
-
-.success-card .card-badge {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: var(--gradient);
-  color: var(--white-1);
-  font-size: 1rem;
-  font-weight: var(--fw-700);
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  box-shadow: 0 8px 16px rgba(0, 153, 255, 0.4);
-  z-index: 3;
-}
-
-.success-card .card-content {
-  padding: 0 12px 12px;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.success-card .card-text {
-  font-size: 1.6rem;
-  color: var(--gray-web);
-  line-height: 1.7;
-}
-
-.success-card .institution {
-  display: block;
-  margin-block: 8px 4px;
-  color: var(--primary-700);
-  font-weight: var(--fw-700);
-  font-family: var(--ff-league-spartan);
-  font-size: 1.9rem;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .success-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .success-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1140px;
-    margin-inline: auto;
-  }
-}
 
 /*-----------------------------------*\
   #PROCESS
@@ -908,9 +763,7 @@ body {
   font-size: var(--fs-6);
 }
 
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
+
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -1453,6 +1306,152 @@ textarea.input-field {
 .back-top-btn:is(:hover, :focus) {
   opacity: 0.9;
 }
+
+
+
+/*-----------------------------------*\
+  #SUCCESS
+\*-----------------------------------*/
+
+.success {
+  background: radial-gradient(circle at top right, hsla(202, 100%, 50%, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, hsla(187, 100%, 50%, 0.05), transparent 40%);
+  background-color: var(--cultured-2);
+  position: relative;
+  z-index: 1;
+}
+
+.success .section-text {
+  margin-block: 5px 45px;
+}
+
+.success-grid {
+  gap: 30px;
+}
+
+.success-card {
+  background-color: hsla(0, 0%, 100%, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px;
+  border-radius: 28px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  transition: all 0.5s var(--cubic-out);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.success-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 var(--primary-500);
+  opacity: 0;
+  transition: var(--transition-2);
+  pointer-events: none;
+}
+
+.success-card:is(:hover, :focus-within) {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(6, 27, 61, 0.15);
+  background-color: var(--white-1);
+  border-color: var(--primary-500);
+}
+
+.success-card:is(:hover, :focus-within)::after {
+  box-shadow: 0 0 0 4px hsla(202, 100%, 50%, 0.1);
+  opacity: 1;
+}
+
+.success-card .card-banner {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  aspect-ratio: 1.5 / 1;
+  box-shadow: var(--shadow-1);
+}
+
+.success-card .img-cover {
+  transition: transform 0.8s var(--cubic-out);
+}
+
+.success-card:is(:hover, :focus-within) .img-cover {
+  transform: scale(1.15);
+}
+
+/* image overlay on hover */
+.success-card .card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsla(202, 100%, 50%, 0.3), transparent);
+  opacity: 0;
+  transition: var(--transition-2);
+}
+
+.success-card:is(:hover, :focus-within) .card-banner::after {
+  opacity: 1;
+}
+
+.success-card .card-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: var(--gradient);
+  color: var(--white-1);
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 0 8px 16px rgba(0, 153, 255, 0.4);
+  z-index: 3;
+}
+
+.success-card .card-content {
+  padding: 0 12px 12px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.success-card .card-text {
+  font-size: 1.6rem;
+  color: var(--gray-web);
+  line-height: 1.7;
+}
+
+.success-card .institution {
+  display: block;
+  margin-block: 8px 4px;
+  color: var(--primary-700);
+  font-weight: var(--fw-700);
+  font-family: var(--ff-league-spartan);
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .success-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .success-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1140px;
+    margin-inline: auto;
+  }
+}
+
+
 
 /*-----------------------------------*\
   #MEDIA QUERIES
