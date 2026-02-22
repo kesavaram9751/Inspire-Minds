@@ -712,6 +712,54 @@ body {
 
 
 /*-----------------------------------*\
+  #SUCCESS
+\*-----------------------------------*/
+
+.success {
+  background-color: var(--cultured-2);
+}
+
+.success .section-text {
+  margin-block: 5px 35px;
+}
+
+.success-card {
+  background-color: var(--white-1);
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(0, 31, 63, 0.04);
+  transition: var(--transition-2);
+}
+
+.success-card:is(:hover, :focus-within) {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(6, 27, 61, 0.15);
+}
+
+.success-card .card-banner {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.success-card .card-text {
+  font-size: 1.5rem;
+  color: var(--eerie-black);
+  font-weight: var(--fw-500);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .success-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+
+/*-----------------------------------*\
   #PROCESS
 \*-----------------------------------*/
 

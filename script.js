@@ -70,7 +70,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   const website = document.querySelector('input[name="website"]').value.trim();
   const message = document.querySelector('textarea[name="message"]').value.trim();
 
-  const phoneNumber = "919994416487"; // 👈 your WhatsApp number here
+  const phoneNumber = "919994490338"; // 👈 your WhatsApp number here
 
   let text = `New enquiry from InspireMinds website%0A%0A`;
   text += `Name: ${name}%0A`;
